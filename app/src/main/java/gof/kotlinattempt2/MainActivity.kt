@@ -13,30 +13,5 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-abstract class  Command {
-    abstract fun execute()
-}
 
-class Light {
-    fun on() {
-        println("turn Light on")
-    }
-}
 
-class LightOnCommand(val light: Light): Command() {
-    override fun execute() {
-        light.on()
-    }
-}
-
-class SimpleRemoteControl {
-    var powerButton: Command
-
-    fun setCommand(command: Command) {
-        powerButton = command
-    }
-
-    fun buttonPressed() {
-        powerButton.execute()
-    }
-}
